@@ -1,0 +1,100 @@
+('_DATA_/01_SMC Conference 2016/01_SMC Conference 2016.bib', True)
+('_DATA_/02_SMC Conference 2015/02_SMC Conference 2015.bib', True)
+ ! smc:2015:011 -> smc:2015:010
+ ! smc:2015:012 -> smc:2015:011
+ ! smc:2015:013 -> smc:2015:012
+ ! smc:2015:014 -> smc:2015:013
+ ! smc:2015:015 -> smc:2015:014
+ ! smc:2015:016 -> smc:2015:015
+ ! smc:2015:017 -> smc:2015:016
+ ! smc:2015:018 -> smc:2015:017
+ ! smc:2015:019 -> smc:2015:018
+ ! smc:2015:020 -> smc:2015:019
+ ! smc:2015:021 -> smc:2015:020
+ ! smc:2015:022 -> smc:2015:021
+ ! smc:2015:023 -> smc:2015:022
+ ! smc:2015:024 -> smc:2015:023
+ ! smc:2015:025 -> smc:2015:024
+ ! smc:2015:026 -> smc:2015:025
+ ! smc:2015:027 -> smc:2015:026
+ ! smc:2015:028 -> smc:2015:027
+ ! smc:2015:029 -> smc:2015:028
+ ! smc:2015:030 -> smc:2015:029
+ ! smc:2015:031 -> smc:2015:030
+ ! smc:2015:032 -> smc:2015:031
+ ! smc:2015:033 -> smc:2015:032
+ ! smc:2015:034 -> smc:2015:033
+ ! smc:2015:035 -> smc:2015:034
+ ! smc:2015:036 -> smc:2015:035
+ ! smc:2015:037 -> smc:2015:036
+ ! smc:2015:038 -> smc:2015:037
+ ! smc:2015:039 -> smc:2015:038
+ ! smc:2015:040 -> smc:2015:039
+ ! smc:2015:041 -> smc:2015:040
+ ! smc:2015:042 -> smc:2015:041
+ ! smc:2015:043 -> smc:2015:042
+ ! smc:2015:044 -> smc:2015:043
+ ! smc:2015:045 -> smc:2015:044
+ ! smc:2015:046 -> smc:2015:045
+ ! smc:2015:047 -> smc:2015:046
+ ! smc:2015:048 -> smc:2015:047
+ ! smc:2015:049 -> smc:2015:048
+ ! smc:2015:050 -> smc:2015:049
+ ! smc:2015:051 -> smc:2015:050
+ ! smc:2015:052 -> smc:2015:051
+ ! smc:2015:053 -> smc:2015:052
+ ! smc:2015:054 -> smc:2015:053
+ ! smc:2015:055 -> smc:2015:054
+ ! smc:2015:056 -> smc:2015:055
+ ! smc:2015:057 -> smc:2015:056
+ ! smc:2015:058 -> smc:2015:057
+ ! smc:2015:059 -> smc:2015:058
+ ! smc:2015:060 -> smc:2015:059
+ ! smc:2015:061 -> smc:2015:060
+ ! smc:2015:062 -> smc:2015:061
+ ! smc:2015:063 -> smc:2015:062
+ ! smc:2015:064 -> smc:2015:063
+ ! smc:2015:065 -> smc:2015:064
+ ! smc:2015:066 -> smc:2015:065
+ ! smc:2015:067 -> smc:2015:066
+ ! smc:2015:068 -> smc:2015:067
+ ! smc:2015:069 -> smc:2015:068
+ ! smc:2015:070 -> smc:2015:069
+ ! smc:2015:071 -> smc:2015:070
+ ! smc:2015:072 -> smc:2015:071
+ ! smc:2015:073 -> smc:2015:072
+ ! smc:2015:074 -> smc:2015:073
+Rewrote _DATA_/02_SMC Conference 2015/02_SMC Conference 2015.bib.
+('_DATA_/03_SMC Conference 2014 (Joint with ICMC)/03_SMC Conference 2014 (Joint with ICMC).bib', True)
+('_DATA_/04_SMC Conference 2013/04_SMC Conference 2013.bib', True)
+('_DATA_/05_SMC Conference 2012/05_SMC Conference 2012.bib', True)
+('_DATA_/06_SMC Conference 2011/06_SMC Conference 2011.bib', True)
+('_DATA_/07_SMC Conference 2010/07_SMC Conference 2010.bib', True)
+('_DATA_/08_SMC Conference 2009/08_SMC Conference 2009.bib', True)
+('_DATA_/09_SMC Conference 2008/09_SMC Conference 2008.bib', True)
+('_DATA_/10_SMC Conference 2007/10_SMC Conference 2007.bib', True)
+('_DATA_/11_SMC Conference 2006/11_SMC Conference 2006.bib', True)
+('_DATA_/12_SMC Conference 2005/12_SMC Conference 2005.bib', True)
+('_DATA_/13_SMC Conference 2004/13_SMC Conference 2004.bib', True)
+ ! smc:2004:035 -> smc:2004:034
+ ! smc:2004:036 -> smc:2004:035
+ ! smc:2004:037 -> smc:2004:036
+ ! smc:2004:038 -> smc:2004:037
+ ! smc:2004:039 -> smc:2004:038
+ ! smc:2004:040 -> smc:2004:039
+ ! smc:2004:041 -> smc:2004:040
+ ! smc:2004:042 -> smc:2004:041
+ ! smc:2004:043 -> smc:2004:042
+ ! smc:2004:044 -> smc:2004:043
+ ! smc:2004:045 -> smc:2004:044
+ ! smc:2004:046 -> smc:2004:045
+ ! smc:2004:047 -> smc:2004:046
+ ! smc:2004:048 -> smc:2004:047
+ ! smc:2004:049 -> smc:2004:048
+ ! smc:2004:050 -> smc:2004:049
+ ! smc:2004:051 -> smc:2004:050
+ ! smc:2004:052 -> smc:2004:051
+ ! smc:2004:053 -> smc:2004:052
+Rewrote _DATA_/13_SMC Conference 2004/13_SMC Conference 2004.bib.
+
+Changed 83 bib entry id/keys.

@@ -1,0 +1,563 @@
+about the conference booktitles - currently the state is:
+
+$ find _DATA_/ -name '*.bib' | while read f; do grep -H booktitle "$f"; done | sort | uniq
+01_SMC Conference 2016.bib: booktitle = {Proceedings of the Sound and Music Computing Conference 2016, SMC 2016, Hamburg, Germany (2016)},
+01_SMC Conference 2016.bib: booktitle = {Proceedings of the Sound and Music Computing Conference 2016, SMC 2016, Hamburg, Germany (2016) (2016)},
+
+02_SMC Conference 2015.bib: booktitle = {Proceedings of the Sound and Music Computing Conference 2015, SMC 2015, Maynooth, Ireland (2015)},
+02_SMC Conference 2015.bib: booktitle = {The 12th Sound and Music Computing Conference, Music Technology Research Group, Department of Computer Science, Maynooth University, Maynooth, Co. Kildare, Ireland (2015)},
+02_SMC Conference 2015.bib: booktitle = {The 12th Sound and Music Computing Conference, Music Technology Research Group, Department of Computer Science, Maynooth University#, Maynooth, Co. Kildare, Ireland (2015)},
+02_SMC Conference 2015.bib: booktitle = {The 12th Sound and Music Computing Conference, Music Technology Research Group, Dept. of computer Science, Maynooth University, Maynooth, Co. Kildare, Ireland (2015)},
+02_SMC Conference 2015.bib: booktitle = {The 12th Sound and Music Computing Conference, Music Technology Research Group, Dept. of Computer Science, Maynooth University, Maynooth, Co. Kildare, Ireland (2015)},
+02_SMC Conference 2015.bib: booktitle = {The 12th Sound and Music Computing Conference, Music Technology Research Group, Dept. of Computer Science, Maynooth University, Volume 1, Maynooth, Co. Kildare, Ireland (2015)},
+
+03_SMC Conference 2014 (Joint with ICMC).bib: booktitle = { Proceedings ICMC|SMC|2014},
+
+04_SMC Conference 2013.bib: booktitle = {Proceedings of the Sound and Music Computing Conference 2013, SMC 2013, Logos Verlag Berlin, Number 2008, Stockholm, Sweden,  (2013)},
+04_SMC Conference 2013.bib: booktitle = {Proceedings of the Sound and Music Computing Conference 2013, SMC 2013, Logos Verlag Berlin, Number 2, Stockholm, Sweden,  (2013)},
+04_SMC Conference 2013.bib: booktitle = {Proceedings of the Sound and Music Computing Conference 2013, SMC 2013, Logos Verlag Berlin, Number 3, Stockholm, Sweden,  (2013)},
+04_SMC Conference 2013.bib: booktitle = {Proceedings of the Sound and Music Computing Conference 2013, SMC 2013, Logos Verlag Berlin, Number 5, Stockholm, Sweden,  (2013)},
+04_SMC Conference 2013.bib: booktitle = {Proceedings of the Sound and Music Computing Conference 2013, SMC 2013, Logos Verlag Berlin, Number October 2011, Stockholm, Sweden,  (2013)},
+04_SMC Conference 2013.bib: booktitle = {Proceedings of the Sound and Music Computing Conference 2013, SMC 2013, Logos Verlag Berlin, Stockholm, Sweden (2013)},
+04_SMC Conference 2013.bib: booktitle = {Proceedings of the Sound and Music Computing Conference 2013, SMC 2013, Logos Verlag Berlin, Stockholm, Sweden,  (2013)},
+04_SMC Conference 2013.bib: booktitle = {Proceedings of the Sound and Music Computing Conference 2013, SMC 2013, Logos Verlag Berlin, Volume 2, Number 1, Stockholm, Sweden,  (2013)},
+04_SMC Conference 2013.bib: booktitle = {Proceedings of the Sound and Music Computing Conference 2013, SMC 2013, Logos Verlag Berlin, Volume 2, Stockholm, Sweden,  (2013)},
+
+05_SMC Conference 2012.bib: booktitle = {Proceedings of the 9th Sound and Music Computing Conference, Copenhagen, Denmark,  (2012)},
+05_SMC Conference 2012.bib: booktitle = {SMC Conference 2012, Copenhagen, Denmark,  (2012)},
+
+06_SMC Conference 2011.bib: booktitle = {SMC Conference 2011 (2011)},
+
+07_SMC Conference 2010.bib: booktitle = {SMC Conference  2010 (2010)},
+07_SMC Conference 2010.bib: booktitle = {SMC Conference 2010 (2010)},
+
+08_SMC Conference 2009.bib: booktitle = {SMC Conference  2009 (2009)},
+08_SMC Conference 2009.bib: booktitle = {SMC Conference 2009 (2009)},
+08_SMC Conference 2009.bib: booktitle = {SMC Conference 2010 (2009)},
+
+09_SMC Conference 2008.bib: booktitle = {SMC Conference 2008 (2008)},
+10_SMC Conference 2007.bib: booktitle = {Proceedings of the 4th Sound and Music Computing Conference (SMC07)},
+11_SMC Conference 2006.bib: booktitle = {SMC Conference 2006 (2006)},
+
+12_SMC Conference 2005.bib: booktitle = {SMC Conference 2005 (2005)},
+12_SMC Conference 2005.bib: booktitle = {Volume 3, Philadelphia, PA, USA,  (2005)},
+
+13_SMC Conference 2004.bib: booktitle = {Bielefeld (2004)},
+13_SMC Conference 2004.bib: booktitle = {Coral Gables, Florida, USA (2004)},
+13_SMC Conference 2004.bib: booktitle = {Mariehamn, Aland (2004)},
+13_SMC Conference 2004.bib: booktitle = {Naples, Italy,  (2004)},
+13_SMC Conference 2004.bib: booktitle = {Paris, France (2004)},
+13_SMC Conference 2004.bib: booktitle = {SMC Conference 2004 (2004)},
+13_SMC Conference 2004.bib: booktitle = {Vienna, Austria (2004)},
+
+Best to unify this like this:
+Proceedings of the Xth Sound and Music Computing Conference (SMC20YY)
+... with manual search and replace... and at the same time, update venue
+
+booktitle = {.*}
+booktitle = {Proceedings of the 13th Sound and Music Computing Conference (SMC2016)}
+also: https://smc2016.hfmt-hamburg.de/wp-content/uploads/2016/09/SMC2016_proceedings.pdf
+
+booktitle = {Proceedings of the 12th Sound and Music Computing Conference (SMC2015)}
+http://www.maynoothuniversity.ie/smc15/files/FinalProceedings.pdf - for editors
+
+* Besides publisher, there is also organization, for 2015 we have: Music Technology Research Group, Dept. of Computer Science, Maynooth University, which is likely organizer, not publisher? But for now, keep it in publisher...
+
+For 2014, there is joint with ICMC - example https://tex.stackexchange.com/questions/152725/abuse-of-address-field-in-bibtex-entries? no actually in:
+  Publisher, location, and year in @inproceedings and @incollection. https://github.com/moewew/biblatex-trad/issues/21
+
+booktitle = {Proceedings of the 13th international conference on Approximation,
+and the 14th International conference on Randomization, and combinatorial
+optimization: algorithms and techniques},
+series = {APPROX/RANDOM'10},
+
+so, ICMC2016 is 42nd International Computer Music Conference hosted by HKU University of the Arts Utrecht and Gaudeamus Muziekweek. (http://www.icmc2016.com/), so 2014 should be 40th International Computer Music Conference
+http://www.sgt.gr/eng/SPG937/ confirms: 40th International Computer Music Conference (ICMC) | 11th Sound and Music Computing Conference (SMC)
+So: Proceedings of the 11th Sound and Music Computing Conference, and the 40th International Computer Music Conference (SMC/ICMC2014)
+Actually, title page has it: http://speech.di.uoa.gr/ICMC-SMC-2014/images/Files/Preface.pdf - multiple ISBN?
+ICMA ISBN-13    978-0-9845274-3-4 *** use this:
+ISBN-10         0-9845274-3-5
+UOA ISBN: set   978-960-466-137-4
+Vol. I          978-960-466-135-0
+IEMA ISBN: set  978-960-7313-29-4
+Vol. I          978-960-7313-27-0
+
+Proceedings of the 10th Sound and Music Computing Conference (SMC2013)
+Stockholm, Sweden
+http://www.speech.kth.se/smac-smc-2013/ 30 July-3 August 2013; actually it says:
+SMAC Stockholm Music Acoustics Conference 2013
+SMC Sound and Music Computing Conference 2013
+... but the proceedings are separate...
+from http://www.speech.kth.se/smac-smc-2013/proceedings/SMC2013_Proceedings_online-version.pdf -> ISBN 978-91-7501-831-7; but already present: 978-3-8325-3472-1, so using that one?
+
+booktitle = {Proceedings of the 9th Sound and Music Computing Conference (SMC2012)} copenhagen
+https://www.scholars.northwestern.edu/en/publications/building-a-music-search-database-using-human-computation: ISBN (Print)
+	9783832531805: 978-3-8325-3180-5
+http://www.smc-conference.org/smc12/smc2012.smcnetwork.org/index.html
+http://www.smc-conference.org/smc12/smc2012.smcnetwork.org/program-2/technical-program/index.html
+... no full procs with ISBN/editors here (same papers as on the usual SMC site)?
+
+SMC Conference 2011: http://smc2011.smcnetwork.org/ Padova, Italy
+Proceedings of the 8th Sound and Music Computing Conference (SMC2011)
+also, I had recorded the ISBN for my thesis: isbn = {978-8-897-38503-5},
+also http://smc2011.smcnetwork.org/docs/SMC2011ProceedingsFinal.pdf
+
+2010: http://smcnetwork.org/resources/smc2010 - Barcelona, Spain
+Proceedings of the 7th Sound and Music Computing Conference (SMC2010)
+there is http://www.smc-conference.org/smc10/index.htm - but no full proceedings with isbn
+
+2009: Porto, Portugal http://smc2009.smcnetwork.org/ 23-25 July 2009
+http://smc2009.smcnetwork.org/proceedings/proceedings.pdf: ISBN: 978-989-95577-6-5
+Proceedings of the 6th Sound and Music Computing Conference (SMC2009)
+
+booktitle = {Proceedings of the 5th Sound and Music Computing Conference (SMC2008)}
+Berlin, Germany http://smcnetwork.org/resources/smc2008
+https://catalog.hathitrust.org/Record/006819991: July 31st - August 3rd: 31 July - 3 August, 2008, Berlin, Germany : proceedings / edited by Martin Supper, Stefan Weinzierl
+ISBN: 	3798320942 (pbk.)
+9783798320949 (pbk.) - http://www.isbn.org/ISBN_converter - 978-3-7983-2094-9
+
+booktitle = {Proceedings of the 4th Sound and Music Computing Conference (SMC2007)}
+
+booktitle = {Proceedings of the 3rd Sound and Music Computing Conference (SMC2006)}
+Marseille, France
+http://smc.afim-asso.org/smc06/smc.htm:  May 18/19/20 2006 : 18-20 May
+
+booktitle = {Proceedings of the 2nd Sound and Music Computing Conference (SMC2005)}
+Salerno, Italy
+https://en.wikipedia.org/wiki/Sound_and_Music_Computing_Conference: SMC 2005: 24–26 November 2005, Salerno, Italy
+
+booktitle = {Proceedings of the 1st Sound and Music Computing Conference (SMC2004)}
+wiki: SMC 2004: 20-22 October 2004, Paris, France
+
+Ok.... so current state now is:
+
+$ find _DATA_/ -name '*.bib' | while read f; do grep -H booktitle "$f"; done | sort | uniq
+01_SMC Conference 2016.bib: booktitle = {Proceedings of the 13th Sound and Music Computing Conference (SMC2016)},
+02_SMC Conference 2015.bib: booktitle = {Proceedings of the 12th Sound and Music Computing Conference (SMC2015)},
+03_SMC Conference 2014 (Joint with ICMC).bib:
+                            booktitle = {Proceedings of the 11th Sound and Music Computing Conference, and the 40th International Computer Music Conference (SMC/ICMC2014)},
+04_SMC Conference 2013.bib: booktitle = {Proceedings of the 10th Sound and Music Computing Conference (SMC2013)},
+05_SMC Conference 2012.bib: booktitle = {Proceedings of the 9th Sound and Music Computing Conference (SMC2012)},
+06_SMC Conference 2011.bib: booktitle = {Proceedings of the 8th Sound and Music Computing Conference (SMC2011)},
+07_SMC Conference 2010.bib: booktitle = {Proceedings of the 7th Sound and Music Computing Conference (SMC2010)},
+08_SMC Conference 2009.bib: booktitle = {Proceedings of the 6th Sound and Music Computing Conference (SMC2009)},
+09_SMC Conference 2008.bib: booktitle = {Proceedings of the 5th Sound and Music Computing Conference (SMC2008)},
+10_SMC Conference 2007.bib: booktitle = {Proceedings of the 4th Sound and Music Computing Conference (SMC2007)},
+11_SMC Conference 2006.bib: booktitle = {Proceedings of the 3rd Sound and Music Computing Conference (SMC2006)},
+12_SMC Conference 2005.bib: booktitle = {Proceedings of the 2nd Sound and Music Computing Conference (SMC2005)},
+13_SMC Conference 2004.bib: booktitle = {Proceedings of the 1st Sound and Music Computing Conference (SMC2004)},
+
+$ find _DATA_/ -name '*.bib' | while read f; do grep -H venue "$f"; done | sort | uniq
+01_SMC Conference 2016.bib: venue = {Hamburg, Germany},
+02_SMC Conference 2015.bib: venue = {Maynooth, Co. Kildare, Ireland},
+03_SMC Conference 2014 (Joint with ICMC).bib: venue = {Athens,  Greece},
+04_SMC Conference 2013.bib: venue = {Stockholm, Sweden},
+05_SMC Conference 2012.bib: venue = {Copenhagen, Denmark},
+06_SMC Conference 2011.bib: venue = {Padova, Italy},
+07_SMC Conference 2010.bib: venue = {Barcelona, Spain},
+08_SMC Conference 2009.bib: venue = {Porto, Portugal},
+09_SMC Conference 2008.bib: venue = {Berlin, Germany},
+10_SMC Conference 2007.bib: venue = {Lefkada, Greece},
+11_SMC Conference 2006.bib: venue = {Marseille, France},
+12_SMC Conference 2005.bib: venue = {Salerno, Italy},
+13_SMC Conference 2004.bib: venue = {Paris, France},
+
+$ find _DATA_/ -name '*.bib' | while read f; do grep -H 'month =' "$f"; done | sort | uniq
+01_SMC Conference 2016.bib: month = {31 August-3 September},
+02_SMC Conference 2015.bib: month = {26 July-1 August},
+03_SMC Conference 2014 (Joint with ICMC).bib: month = {14-20 September},
+04_SMC Conference 2013.bib: month = {30 July-3 August},
+05_SMC Conference 2012.bib: month = {11-14 July},
+06_SMC Conference 2011.bib: month = {6-9 July},
+07_SMC Conference 2010.bib: month = {21-24 July},
+08_SMC Conference 2009.bib: month = {23-25 July},
+09_SMC Conference 2008.bib: month = {31 July-3 August},
+10_SMC Conference 2007.bib: month = {11-13 July},
+11_SMC Conference 2006.bib: month = {18-20 May},
+12_SMC Conference 2005.bib: month = {24-26 November},
+13_SMC Conference 2004.bib: month = {20-22 October},
+
+Let's check isbn:
+$ find _DATA_/ -name '*.bib' | while read f; do grep -H 'isbn =' "$f"; done | sort | uniq
+01_SMC Conference 2016.bib: isbn = {978-3-00-053700-4},
+02_SMC Conference 2015.bib: isbn = {978-0-9927466-2-9},
+03_SMC Conference 2014 (Joint with ICMC).bib: isbn = {978-0-9845274-3-4},
+04_SMC Conference 2013.bib: isbn = {978-3-8325-3472-1},
+05_SMC Conference 2012.bib: isbn = {978-3-8325-3180-5},
+06_SMC Conference 2011.bib: isbn = {978-8-897-38503-5},
+07_SMC Conference 2010.bib: isbn = {},
+08_SMC Conference 2009.bib: isbn = {978-989-95577-6-5},
+09_SMC Conference 2008.bib: isbn = {978-3-7983-2094-9},
+10_SMC Conference 2007.bib: isbn = {978-960-6608-75-9},
+11_SMC Conference 2006.bib: isbn = {},
+12_SMC Conference 2005.bib: isbn = {},
+13_SMC Conference 2004.bib: isbn = {},
+
+... and editor:
+$ find _DATA_/ -name '*.bib' | while read f; do grep -H 'editor =' "$f"; done | sort | uniq
+01_SMC Conference 2016.bib: editor = {Großmann, Rolf and Hajdu, Georg},
+02_SMC Conference 2015.bib: editor = {Joseph Timoney and Thomas Lysaght},
+03_SMC Conference 2014 (Joint with ICMC).bib: editor = {Anastasia Georgaki and Georgios Kouroupetroglou},
+04_SMC Conference 2013.bib: editor = {Roberto Bresin},
+05_SMC Conference 2012.bib: editor = {},
+06_SMC Conference 2011.bib: editor = {Serena Zanolla and Federico Avanzini and Sergio Canazza and Amalia de Götzen},
+07_SMC Conference 2010.bib: editor = {},
+08_SMC Conference 2009.bib: editor = {Fabien Gouyon and Álvaro Barbosa and Xavier Serra},
+09_SMC Conference 2008.bib: editor = {Martin Supper and Stefan Weinzierl},
+10_SMC Conference 2007.bib: editor = {Charalampos Spyridis and Anastasia Georgaki and Georgios Kouroupetroglou and Christina Anagnostopoulou},
+11_SMC Conference 2006.bib: editor = {},
+12_SMC Conference 2005.bib: editor = {},
+13_SMC Conference 2004.bib: editor = {},
+
+For the names, try use a script to check (if . present in author, then use pdfinfo or something) - papers-check-names.py
+Hmmm... looks like for this:
+# 02_SMC Conference 2015:044/74: orig 'G. Presti and D.A. Mauro and G. Haus' ->  _DATA_/02_SMC\ Conference\ 2015/smc_2015_044.pdf
+... the short names are in the PDF as well... pdfinfo is: Author:         G. Presti1, D.A. Mauro2, and G. Haus1
+# 10_SMC Conference 2007:008/65: orig 'C. Le Prado and S. Natkin' -> _DATA_/10_SMC\ Conference\ 2007/smc_2007_008.pdf ; here are long names.. but pdfinfo: Author: IEEE
+
+so we have, as text:
+
+            TRAP: TRAnsient Presence detection exploiting Continuous Brightness
+                                  Estimation (CoBE)
+
+                                             G. Presti1 , D.A. Mauro2 , and G. Haus1
+       1
+            Laboratorio di Informatica Musicale (LIM), Dipartimento di Informatica (DI), Universit´a degli Studi di Milano
+                                                Via Comelico 39, 20135 Milan, Italy
+                                                 giorgio.presti@unimi.it
+                                 2
+                                   Iuav University of Venice, Department of Architercture and Arts
+                                               Dorsoduro 2196, 30123 Venice, Italy
+                                                        dmauro@iuav.it
+
+
+or
+
+    Proceedings SMC'07, 4th Sound and Music Computing Conference, 11-13 July 2007, Lefkada, Greece
+
+
+
+
+                      LISTEN LISBOA:
+          Scripting Languages for Interactive Musical
+                         Installations
+                                              Cecile Le Prado, Stéphane Natkin
+
+                           CEDRIC/ CNAM, Paris, France, cecile.leprado@free.fr,, natkin@cnam.fr
+
+so basically, could do pdf2text, then show only the part to the first @ in the emails, which would reveal the names?
+
+also:
+$ find _DATA_/ -name '*.bib' | while read f; do grep -H 'publisher =' "$f"; done | sort | uniq
+01_SMC Conference 2016.bib: publisher = {},
+02_SMC Conference 2015.bib: publisher = {Music Technology Research Group, Department of Computer Science, Maynooth University},
+03_SMC Conference 2014 (Joint with ICMC).bib: publisher = {},
+04_SMC Conference 2013.bib: publisher = {Logos Verlag Berlin},
+05_SMC Conference 2012.bib: publisher = {},
+06_SMC Conference 2011.bib: publisher = {},
+07_SMC Conference 2010.bib: publisher = {},
+08_SMC Conference 2009.bib: publisher = {},
+09_SMC Conference 2008.bib: publisher = {},
+10_SMC Conference 2007.bib: publisher = {},
+11_SMC Conference 2006.bib: publisher = {},
+12_SMC Conference 2005.bib: publisher = {},
+13_SMC Conference 2004.bib: publisher = {},
+
+...
+
+Note, problem with pdftotext and winAnsi encoding:
+when I do evince _DATA_/10_SMC\ Conference\ 2007/smc_2007_059.pdf and copypaste text, get:
+
+	
+
+
+	
+
+https://stackoverflow.com/questions/24107759/strange-behaviour-of-a-pdf-to-text-conversion
+ the problem is the same even if I try to copy a bunch of text from the pdf document end paste it in a text document. - this normally is a good indicator that trouble is ahead for other programmatic text extraction attempts. And the encoding used is not always as easy as the one I the question @Jongware points to. – mkl Jun 8 '14 at 16:12
+ Not all text in every PDF is extractable; see stackoverflow.com/questions/21279548/… (summary: yes, it is the encoding, but you don't know which one is used unless spcified). – usr2564301 Jun 8 '14 at 15:59
+Yup, the fonts are encoded (using "Adobe-Identity-UCS"), and there is no further encoding information stored. See mkl's stackoverflow.com/a/15727984/2564301 for a longer story. (OT: its binary header reads "Derek's PDF". Interesting--haven't seen that one before.)
+
+https://stackoverflow.com/questions/21279548/facing-issues-on-extracting-text-from-pdf-file-using-java
+https://stackoverflow.com/questions/15721846/cidfonts-and-mapping/15727984#15727984
+
+https://stackoverflow.com/questions/12703387/pdf-font-encoding-why-cant-i-copy-text-from-a-pdf
+pdffonts gives a first quick overview. It returns the following info:
+The column uni should contain a yes entry. The no in that column indicates that a /ToUnicode table is missing in the font used by the PDF. That font is embedded as a subset under the name YLWHHJ+FrenchScriptMT. It also uses a Custom font encoding (most likely using a /Differences array). Without a correct and complete /ToUnicode table it will be impossible to extract the text correctly.
+
+$ pdffonts _DATA_/10_SMC\ Conference\ 2007/smc_2007_059.pdf
+Syntax Error: Expected the optional content group list, but wasn't able to find it, or it isn't an Array
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+TimesNewRomanPSMT                    TrueType          WinAnsi          no  no  no      53  0
+DJELMA+TimesNewRomanPSMT             CID TrueType      Identity-H       yes yes no      41  0
+DJEMCO+TimesNewRomanPS-BoldItalicMT  CID TrueType      Identity-H       yes yes no      42  0
+DJEMDO+TimesNewRomanPS-BoldMT        CID TrueType      Identity-H       yes yes no      43  0
+DJENEJ+TimesNewRomanPS-ItalicMT      CID TrueType      Identity-H       yes yes no      21  0
+DOANEI+Symbol                        Type 1C           WinAnsi          yes yes no      26  0
+
+ok, then ...
+no dice:
+qpdf _DATA_/10_SMC\ Conference\ 2007/smc_2007_059.pdf - | pdftotext -layout -f 1 -l 1 - - | iconv -f ISO-8859-15 -t UTF-8 |less
+qpdf _DATA_/10_SMC\ Conference\ 2007/smc_2007_059.pdf - | pdftotext -layout -f 1 -l 1 - - | iconv -f CP1252 -t UTF-8 |less
+qpdf _DATA_/10_SMC\ Conference\ 2007/smc_2007_059.pdf - | pdftotext -layout -f 1 -l 1 - - | iconv -f Windows-1252 -t UTF-8 |less
+
+https://stackoverflow.com/questions/9857818/troubles-with-cp1251-printed-file-from-word
+I want to extract only text and index this files. Problem is I get garbage output from pdftotext. I tried to export example PDF file from Acrobat, and I again got garbage, but additionally processing with iconv got me right data:
+iconv -f windows-1251 -t utf-8 Adobe-exported.txt
+But same trick doesn't work with pdftotext
+... here cannot get even with Adobe exported...
+
+https://stackoverflow.com/questions/17193839/where-can-i-a-mapping-of-identity-h-encoded-characters-to-ascii-or-unicode-chara
+Also, Identity-H is just a 1:1 character mapping for all characters from 0x0000 to 0xFFFF. ie. Identity is an identity mapping.
+Your real problem is the missing /ToUnicode entry in this PDF. I suspect there is also an embedded CMap in your PDF that explains why there could be 3 bytes per character.
+
+https://tex.stackexchange.com/questions/354293/normalize-authors-names-in-bib-file
+... no answer so far - will have to code my own script...
+
+************
+
+after removing the (two) duplicate entries; and finding the missing PDFs (some are preprint, but some have copyright), now can do a final manual paper title/authors check; use JabRef4 for a live preview of the PDFs...
+
+* probably also have to make a script - papers-after-dupl-rename.py - that will do a "numerical" rename for PDFs (and so also in the .bibs) now that duplicates are removed.. (note, at this time, papers-check-missing-pdf.py does not report any missing PDFs anymore)...
+** also, here discovered that I had a 'year' missing in one - do a script that checks for fields consistency... papers-check-missing-pdf.py reports 'volume' and 'origtitleb' missing;
+*** added 'volume' manually - now only 'origtitleb' is reported, ignoring that one
+** did this - paid attention to everything, except I forgot to change the bibtex keys! made papers-sync-id-nporder.py just to fix this... re-checked consistency after this, looks OK...
+
+Discovered another duplicate:
+@inproceedings{smc:2015:001,
+ title = {Rendering and Subjective Evaluation of Real vs. Synthetic Vibrotactile Cues on a Digital Piano Keyboard},
+ urlpdf = {http://smcnetwork.org/system/files/SMC2015_submission_16.pdf},
+@inproceedings{smc:2015:014,
+ title = {Rendering and Subjective Evaluation of Real vs. Synthetic Vibrotactile Cues on a Digital Piano Keyboard},
+ urlpdf = {http://smcnetwork.org/system/files/SMC2015_submission_16_0.pdf},
+
+There is also a fuckup in 03_:
+
+@inproceedings{smc:2014:022,
+ origtitle = {Diffusing Diffusion: A history of the technological advances  in spatial performance},
+ urlpdf = {http://speech.di.uoa.gr/ICMC-SMC-2014/images/VOL_1/0133.pdf},
+------> this is: digitally extending the optical soundtrack as pdf
+@inproceedings{smc:2014:023,
+ title = {Digitally Extending the Optical Soundtrack},
+ urlpdf = {http://speech.di.uoa.gr/ICMC-SMC-2014/images/VOL_1/0140.pdf},
+------> this is: easter eggs:.... **** REPLACE 023.pdf
+@inproceedings{smc:2014:024,
+ title = {Easter Eggs: Hidden Tracks and Messages in Musical Mediums},
+ urlpdf = {http://speech.di.uoa.gr/ICMC-SMC-2014/images/VOL_1/0140.pdf},
+------> this is: easter eggs:.... ALSO
+
+Replace the right URLs and PDFs for now manually ... ok, looks fixed
+
+Also:
+@inproceedings{smc:2014:055,
+ title = {Kuatro: A Motion-based Framework for Interactive Music Installations},
+ urlpdf = {http://speech.di.uoa.gr/ICMC-SMC-2014/images/VOL_1/0355.pdf},
+<p>The requested URL /ICMC-SMC-2014/images/VOL_1/0355.pdf was not found on this server.</p>
+... and indeed, it should be page 355... but it is not there ?! Clear the file field...
+Found it on: https://quod.lib.umich.edu/cgi/p/pod/dod-idx/kuatro-a-motion-based-framework-for-interactive-music.pdf?c=icmc;idno=bbp2372.2014.055
+... but it says: Proceedings ICMC|SMC|2014... eh OK
+
+Also:
+@inproceedings{smc:2014:086,
+ title = {The Black Swan: Probable and Improbable Communication Over Local  and Geographically Displaced Net-worked Connections as a Musical Performance System},
+ urlpdf = {http://speech.di.uoa.gr/ICMC-SMC-2014/images/VOL_1/0553.pdf},
+<p>The requested URL /ICMC-SMC-2014/images/VOL_1/0553.pdf was not found on this server.</p>
+found it on: https://quod.lib.umich.edu/cgi/p/pod/dod-idx/black-swan-probable-and-improbable-communcation-over-local.pdf?c=icmc;idno=bbp2372.2014.086
+
+(had a git corruption here)
+
+Also:
+@inproceedings{smc:2014:103,
+ title = {Little Drummer Bot: Building, Testing, and Interfacing With a New Expressive Mechatronic Drum System},
+ urlpdf = {http://speech.di.uoa.gr/ICMC-SMC-2014/images/VOL_1/0636.pdf},
+<p>The requested URL /ICMC-SMC-2014/images/VOL_1/0636.pdf was not found on this server.</p>
+found it on: http://quod.lib.umich.edu/cgi/p/pod/dod-idx/little-drummer-bot-building-testing-and-interfacingwith.pdf?c=icmc;idno=bbp2372.2014.103
+
+Again messed up PDF:
+this is OK:
+@inproceedings{smc:2014:119,
+ title = {TC-Data: Extending Multi-touch Interfaces for Generalized Relational Control},
+ urlpdf = {http://speech.di.uoa.gr/ICMC-SMC-2014/images/VOL_1/0762.pdf},
+this has the same pdf as before:
+@inproceedings{smc:2014:120,
+ title = {The Breath Engine: Challenging Biological and Technological Boundaries  Through the Use of NK Complex Adaptive Systems},
+ urlpdf = {http://speech.di.uoa.gr/ICMC-SMC-2014/images/VOL_1/0762.pdf},
+-> urlpdf is the same, should be: 0767.pdf, it is there - fix the pdf and the link
+
+Note:
+@inproceedings{smc:2014:155,
+ title = {An Idiom-independent Representation of Chords for Computational Music  Analysis and Generation},
+.. does not have the authors in the PDF! also @inproceedings{smc:2014:161, also @inproceedings{smc:2014:189,
+
+Again messed up PDF:
+this is OK:
+@inproceedings{smc:2014:277,
+ title = {i-score, an Interactive Sequencer for the Intermedia Arts},
+ urlpdf = {http://speech.di.uoa.gr/ICMC-SMC-2014/images/VOL_2/1826.pdf},
+this has same PDF as before - actually no:
+ title = {Sound and Music Computing at Aalborg University in Copenhagen},
+ urlpdf = {http://speech.di.uoa.gr/ICMC-SMC-2014/images/VOL_2/1830.pdf},
+<p>The requested URL /ICMC-SMC-2014/images/VOL_2/1830.pdf was not found on this server.</p>
+Found it here; http://quod.lib.umich.edu/cgi/p/pod/dod-idx/sound-and-music-computing-at-aalborg-university.pdf?c=icmc;idno=bbp2372.2014.278
+
+This pdf is corrupt:
+@inproceedings{smc:2012:015,
+ title = {Automatic Arrangement for Guitars Using Hidden Markov Model},
+ urlpdf = {http://smcnetwork.org/system/files/smc2012-268.pdf},
+--- it's like that on the site... probably there was an alternative version if I remember?
+
+also - @inproceedings{smc:2005:013, the pdf has IEEE copyright notice, but "reprinted with permission"
+
+Removing the smc:2015:001/smc:2015:014 duplicate... and run papers-after-dupl-rename.py .. looks OK.
+
+* Then finally, will probably have to remove the 'file' entries for those PDFs that were missing earlier, that have bibliographic info from other conferences... so they are not uploaded...
+** let's restate the _miss_pdf.log:
+
+('_DATA_/02_SMC Conference 2015/02_SMC Conference 2015.bib', True)
+10/74: PDF missing
+ title 'Design and Implementation of a Whole-body Haptic Suit for “ilinx”, a Multisensory Art Installation'
+********** DUPLICATE ENTRY, there is pdf!
+    duplicates:
+    http://smcnetwork.org/node/1876 # with pdf
+    http://smcnetwork.org/node/1879 # no pdf
+>>> OK, leave this
+
+('_DATA_/12_SMC Conference 2005/12_SMC Conference 2005.bib', True)
+13/33: PDF missing
+ title 'Energy Behavior in Time-varying Fractional Delay Filters for Physical Modeling of Musical Instruments'
+********** FOUND at http://lib.tkk.fi/Diss/2008/isbn9789512292431/article2.pdf, but there is IEEE copyright notice
+>>> remove file={} here
+
+('_DATA_/13_SMC Conference 2004/13_SMC Conference 2004.bib', True)
+4/53: PDF missing
+ title 'A Simplified Design of Multidimensional Transfer Function Models'
+********** FOUND at http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.514.5707&rep=rep1&type=pdf apparently preprint (no notice)
+>>> remove file={} here
+
+8/53: PDF missing
+ title 'Bioacoustical Modeling for Sound Synthesis: A Case Study of Odontoceti Clicks'
+********** FOUND at http://www.akustinenseura.fi/wp-content/uploads/2013/08/o08.pdf, but it has a notice: Joint Baltic-Nordic Acoustics Meeting 2004, 8-10 June 2004, Mariehamn, Åland
+>>> remove file={} here
+
+23/53: PDF missing
+ title 'Informative Sonic Feedback for Continuous Human Controlling a Sound Model of a Rolling Ball'
+********** FOUND at http://www.interactive-sonification.org/ISon2004/proceedings/papers/RathRocchesso2004-ISF.pdf but it has a notice: PROCEEDINGS OF THE INT. WORKSHOP ON INTERACTIVE SONIFICATION, BIELEFELD, JAN. 2004; and at http://www.dbt.univr.it/documenti/ArticoloRivista/allegato/allegato278145.pdf but it has a magazine format, again for "interactive sonification"
+>>> remove file={} here
+
+34/53: PDF missing
+ title 'Physical Modeling for Pure Data (Pmpd) and Real Time Interaction With an Audio Synthesis'
+********** DUPLICATE entry - PDF already exists!
+    duplicates:
+    http://smcnetwork.org/node/1048 # with pdf
+    http://smcnetwork.org/node/781  # no pdf
+>>> OK, leave this
+
+37/53: PDF missing
+ title 'Pmpd : Physical Modelling for Pure Data'
+********** FOUND at: http://quod.lib.umich.edu/cgi/p/pod/dod-idx/pmpd-physical-modelling-for-pure-data.pdf?c=icmc;idno=bbp2372.2004.058 (this has a notice Proceedings ICMC 2004) and http://www.chnry.net/ch/IMG/pdf/2004_pmpd_icmc.pdf (no notice at all, apparently preprint)
+>>> remove file={} here
+
+41/53: PDF missing
+ title 'Roomweaver: A Digital Waveguide Mesh Based Room Acoustics Research Tool'********** FOUND at: http://ant-s4.unibw-hamburg.de/dafx/paper-archive/2004/P_268.PDF but it has a notice Proc. of of the the 7 7th Int. Conference Conference on on Digital Digital Audio Audio Effects Effects (DAFx'04), (DAFX-04), Naples, Naples, Italy, Italy, October 5-8, 2004
+>>> remove file={} here
+
+% NO PDF HERE, BAD BIB? Got it - see urlpdf
+@inproceedings{smc:2004:012,
+ origtitle = {Contact sounds for continuous feedback},
+ urlpdf = {http://www.speech.kth.se/prod/publications/files/990.pdf},
+also has a notice: PROCEEDINGS OF THE INT. WORKSHOP ON INTERACTIVE SONIFICATION, BIELEFELD, JAN. 2004
+>>> remove file={} here
+
+////////////////
+
+Ok, now can start with zenodo put/upload - those with empty file={} will get entries, but no pdf.
+http://help.zenodo.org/features/ -> see about community, need to make one so all the papers pop up under it.
+"Communities
+— create your own repository
+Zenodo allows you to create your own collection and accept or reject uploads submitted to it. Creating a space for your next workshop or project has never been easier. Plus, everything is citeable and discoverable!"
+
+Click on https://zenodo.org/communities/ ->
+
+You currently have no community collections.
+Want your own community?
+It's easy. Just click the button to get started.
+    Curate — accept/reject what goes in your community collection.
+    Export — your community collection is automatically exported via OAI-PMH
+    Upload — get custom upload link to send to people
+
+  Creating a "community" in Zenodo? - Google Grupper
+  https://groups.google.com/forum/?_escaped_fragment_=topic/sbml-discuss/YIoD5ix29p8#!topic/sbml-discuss/YIoD5ix29p8
+
+Nothing more as help - so just start with creating a community - click New button on page
+Instead of "Sound and Music Computing (SMC)" -> "Sound and Music Computing Conference (SMC)"
+
+https://zenodo.org/communities/smc/edit/
+Identifier: smc The identifier cannot be changed after creation of the community.
+
+
+Collection URL: Above address links directly to your community collection.
+https://zenodo.org/communities/smc/
+
+Upload URL: Above address will automatically ensure people who use it will have their record added to your community collection.
+https://zenodo.org/deposit/new?c=smc
+
+Curation URL: Above address links to your private curation URL. You will find all uploads pending your curation.
+https://zenodo.org/communities/smc/curate/
+
+Harvesting URL: Above address links to a OAI-PMH feed, which can be used by other digital repositories to harvest this community.
+https://zenodo.org/oai2d?verb=ListRecords&set=user-smc&metadataPrefix=oai_dc
+
+
+  communities: support for multiple curators per community · Issue #810 · zenodo/zenodo · GitHub
+  https://github.com/zenodo/zenodo/issues/810
+I would like to give a 👍 on this issue, hopefully it will be addressed in a future milestone.
+As well important for us from EFSA.
+For us the community is in reality "EFSA owned", not really "personell".
+So it would be very usefull, if there could be multiple curators or goups per community.
+
+[Community curation · Issue #35 · zenodo/zenodo · GitHub](https://github.com/zenodo/zenodo/issues/35)
+    Allow multiple curators
+    Allow curators to edit metadata.
+
+Damn... ah nevermind, let's try make upload script...
+
+  Developers | Zenodo
+  http://developers.zenodo.org/#quickstart-upload
+
+All API access requires an access token, so create one.
+https://zenodo.org/account/settings/applications/tokens/new/
+Did one, PersonalAllScopes with:
+  deposit:actions
+  Allow publishing of uploads.
+  deposit:write
+  Allow upload (but not publishing).
+it is: BH4cyXei3...
+note: "Do not share this personal access token. It gives full access to your account."
+
+also check:
+http://developers.zenodo.org/#deposit-metadata
+http://developers.zenodo.org/#representation
+
+NOTE: once "published", then it is impossible to delete an entry? No button in GUI - and the API says:
+https://zenodo.org/api/deposit/depositions/849079/actions/discard
+{
+  "message": "The method is not allowed for the requested URL.",
+  "status": 405
+}
+... actually, discard is just discard changes?
+
+Indeed:
+
+# Publish a deposition. Note, once a deposition is published, you can no longer delete it.
+# (Delete an existing deposition file resource. Note, only deposition files for unpublished depositions may be deleted.)
+# "Don’t execute this last step - it will put your test upload straight online."
+
+So, this first one I cannot delete anymore:
+https://zenodo.org/deposit/849079
+Will make sure not to publish others?
+
+(Need to parse months - https://dateparser.readthedocs.io/en/latest/ looks great, but sudo pip3 install fails - https://bitbucket.org/ruamel/yaml/issues/95/pip3-install-ruamelyaml-fails - so manually)
+
+Zenodo for published has: https://zenodo.org/record/849079 => with PDF preview;
+for unpublished it has  : https://zenodo.org/deposit/849133 => and this is an edit form, no PDF preview...

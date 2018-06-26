@@ -1,0 +1,126 @@
+('_DATA_/01_SMC Conference 2016/01_SMC Conference 2016.bib', True)
+('_DATA_/02_SMC Conference 2015/02_SMC Conference 2015.bib', True)
+10/74: PDF missing
+ title 'Design and Implementation of a Whole-body Haptic Suit for “ilinx”, a Multisensory Art Installation'
+ authr 'M. Giordano and I. Hattwick and I. Franco and D. Egloff and E. Frid and V. Lamontagne and TeZ and C. Salter and M. Wanderley'
+********** DUPLICATE ENTRY, there is pdf!
+    duplicates:
+    http://smcnetwork.org/node/1876 # with pdf
+    http://smcnetwork.org/node/1879 # no pdf
+
+('_DATA_/03_SMC Conference 2014 (Joint with ICMC)/03_SMC Conference 2014 (Joint with ICMC).bib', True)
+('_DATA_/04_SMC Conference 2013/04_SMC Conference 2013.bib', True)
+('_DATA_/05_SMC Conference 2012/05_SMC Conference 2012.bib', True)
+('_DATA_/06_SMC Conference 2011/06_SMC Conference 2011.bib', True)
+('_DATA_/07_SMC Conference 2010/07_SMC Conference 2010.bib', True)
+('_DATA_/08_SMC Conference 2009/08_SMC Conference 2009.bib', True)
+('_DATA_/09_SMC Conference 2008/09_SMC Conference 2008.bib', True)
+('_DATA_/10_SMC Conference 2007/10_SMC Conference 2007.bib', True)
+('_DATA_/11_SMC Conference 2006/11_SMC Conference 2006.bib', True)
+('_DATA_/12_SMC Conference 2005/12_SMC Conference 2005.bib', True)
+13/33: PDF missing
+ title 'Energy Behavior in Time-varying Fractional Delay Filters for Physical Modeling of Musical Instruments'
+ authr 'J. Pakarinen and M. Karjalainen and V. Välimäki and S. Bilbao'
+********** FOUND at http://lib.tkk.fi/Diss/2008/isbn9789512292431/article2.pdf, but there is IEEE copyright notice
+
+('_DATA_/13_SMC Conference 2004/13_SMC Conference 2004.bib', True)
+4/53: PDF missing
+ title 'A Simplified Design of Multidimensional Transfer Function Models'
+ authr 'Stehan Petrausch and Rudolf Rabenstein'
+********** FOUND at http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.514.5707&rep=rep1&type=pdf apparently preprint (no notice)
+
+
+8/53: PDF missing
+ title 'Bioacoustical Modeling for Sound Synthesis: A Case Study of Odontoceti Clicks'
+ authr 'Cumhur Erkut'
+********** FOUND at http://www.akustinenseura.fi/wp-content/uploads/2013/08/o08.pdf, but it has a notice: Joint Baltic-Nordic Acoustics Meeting 2004, 8-10 June 2004, Mariehamn, Åland
+
+23/53: PDF missing
+ title 'Informative Sonic Feedback for Continuous Human Controlling a Sound Model of a Rolling Ball'
+ authr 'M. Rath and D. Rocchesso'
+********** FOUND at http://www.interactive-sonification.org/ISon2004/proceedings/papers/RathRocchesso2004-ISF.pdf but it has a notice: PROCEEDINGS OF THE INT. WORKSHOP ON INTERACTIVE SONIFICATION, BIELEFELD, JAN. 2004; and at http://www.dbt.univr.it/documenti/ArticoloRivista/allegato/allegato278145.pdf but it has a magazine format, again for "interactive sonification"
+
+34/53: PDF missing
+ title 'Physical Modeling for Pure Data (Pmpd) and Real Time Interaction With an Audio Synthesis'
+ authr 'Cyrille Henry'
+********** DUPLICATE entry - PDF already exists!
+    duplicates:
+    http://smcnetwork.org/node/1048 # with pdf
+    http://smcnetwork.org/node/781  # no pdf
+
+
+37/53: PDF missing
+ title 'Pmpd : Physical Modelling for Pure Data'
+ authr 'Cyrille Henry'
+********** FOUND at: http://quod.lib.umich.edu/cgi/p/pod/dod-idx/pmpd-physical-modelling-for-pure-data.pdf?c=icmc;idno=bbp2372.2004.058 (this has a notice Proceedings ICMC 2004) and http://www.chnry.net/ch/IMG/pdf/2004_pmpd_icmc.pdf (no notice at all, apparently preprint)
+
+41/53: PDF missing
+ title 'Roomweaver: A Digital Waveguide Mesh Based Room Acoustics Research Tool'
+ authr 'M. J. Beeson and D. T. Murphy'
+********** FOUND at: http://ant-s4.unibw-hamburg.de/dafx/paper-archive/2004/P_268.PDF but it has a notice Proc. of of the the 7 7th Int. Conference Conference on on Digital Digital Audio Audio Effects Effects (DAFx'04), (DAFX-04), Naples, Naples, Italy, Italy, October 5-8, 2004
+
+Found 8 missing pdfs.
+
+Also from previous:
+% NO PDF HERE, BAD BIB? Got it - see urlpdf
+@inproceedings{smc:2004:012,
+ origtitle = {Contact sounds for continuous feedback},
+ urlpdf = {http://www.speech.kth.se/prod/publications/files/990.pdf},
+also has a notice: PROCEEDINGS OF THE INT. WORKSHOP ON INTERACTIVE SONIFICATION, BIELEFELD, JAN. 2004
+
+>>>>>>>>>>>>>>>>>>
+
+
+('_DATA_/01_SMC Conference 2016/01_SMC Conference 2016.bib', True)
+('_DATA_/02_SMC Conference 2015/02_SMC Conference 2015.bib', True)
+('_DATA_/03_SMC Conference 2014 (Joint with ICMC)/03_SMC Conference 2014 (Joint with ICMC).bib', True)
+('_DATA_/04_SMC Conference 2013/04_SMC Conference 2013.bib', True)
+('_DATA_/05_SMC Conference 2012/05_SMC Conference 2012.bib', True)
+('_DATA_/06_SMC Conference 2011/06_SMC Conference 2011.bib', True)
+('_DATA_/07_SMC Conference 2010/07_SMC Conference 2010.bib', True)
+('_DATA_/08_SMC Conference 2009/08_SMC Conference 2009.bib', True)
+('_DATA_/09_SMC Conference 2008/09_SMC Conference 2008.bib', True)
+('_DATA_/10_SMC Conference 2007/10_SMC Conference 2007.bib', True)
+('_DATA_/11_SMC Conference 2006/11_SMC Conference 2006.bib', True)
+('_DATA_/12_SMC Conference 2005/12_SMC Conference 2005.bib', True)
+13/33: PDF missing
+ title 'Energy Behavior in Time-varying Fractional Delay Filters for Physical Modeling Synthesis of Musical Instruments'
+ authr 'Jyri Pakarinen and Matti Karjalainen and Vesa Välimäki and Stefan Bilbao'
+('_DATA_/13_SMC Conference 2004/13_SMC Conference 2004.bib', True)
+4/52: PDF missing
+ title 'A Simplified Design of Multidimensional Transfer Function Models'
+ authr 'Stefan Petrausch and Rudolf Rabenstein'
+8/52: PDF missing
+ title 'Bioacoustical Modeling for Sound Synthesis: A Case Study of Odontoceti Clicks'
+ authr 'Cumhur Erkut'
+12/52: PDF missing
+ title 'Contact Sounds for Continuous Feedback'
+ authr 'Davide Rocchesso and Federico Avanzini and Matthias Rath and Roberto Bresin and Stefania Serafin'
+23/52: PDF missing
+ title 'Informative Sonic Feedback for Continuous Human-machine Interaction - Controlling a Sound Model of a Rolling Ball'
+ authr 'Matthias Rath and Davide Rocchesso'
+36/52: PDF missing
+ title 'pmpd: Physical Modelling for Pure Data'
+ authr 'Cyrille Henry'
+40/52: PDF missing
+ title 'RoomWeaver: A Digital Waveguide Mesh Based Room Acoustics Research Tool'
+ authr 'Mark J. Beeson and Damian T. Murphy'
+
+Found 7 missing pdfs.
+
+Report: existing entries (found/missing):
+01_SMC Conference 2016: 79 (79/0)
+02_SMC Conference 2015: 72 (72/0)
+03_SMC Conference 2014 (Joint with ICMC): 281 (281/0)
+04_SMC Conference 2013: 118 (118/0)
+05_SMC Conference 2012: 75 (75/0)
+06_SMC Conference 2011: 79 (79/0)
+07_SMC Conference 2010: 73 (73/0)
+08_SMC Conference 2009: 63 (63/0)
+09_SMC Conference 2008: 34 (34/0)
+10_SMC Conference 2007: 65 (65/0)
+11_SMC Conference 2006: 26 (26/0)
+12_SMC Conference 2005: 33 (32/1)
+13_SMC Conference 2004: 52 (46/6)
+
+Totals: 1050 (1043/7)

@@ -1,0 +1,128 @@
+git repo corrupt: Thu Aug 24 18:08:38 CEST 2017
+
+Fri Aug 25 10:50:43 CEST 2017
+
+git repo corrupt yesterday;
+cat .git/logs/refs/heads/master | awk '{print $2}' | while read f; do echo "---" $f; git cat-file -p $f; done
+cat .git/logs/refs/heads/master | awk '{print $2}' | while read f; do echo "---" $f; git ls-tree $f; done | less
+
+$ git log
+error: object file .git/objects/a0/ec52912d8b4d5b643eaa8ee790f49bc4e12e20 is empty
+error: object file .git/objects/a0/ec52912d8b4d5b643eaa8ee790f49bc4e12e20 is empty
+fatal: loose object a0ec52912d8b4d5b643eaa8ee790f49bc4e12e20 (stored in .git/objects/a0/ec52912d8b4d5b643eaa8ee790f49bc4e12e20) is corrupt
+
+$ git for-each-ref --format='%(refname)' | while read ref; do git rev-list --objects $ref >/dev/null || echo "in $ref"; done
+
+https://stackoverflow.com/questions/801577/how-to-recover-git-objects-damaged-by-hard-disk-failure
+2) Move corrupt blob to a safe place (just in case)
+
+mv .git/objects/a0/ec52912d8b4d5b643eaa8ee790f49bc4e12e20 ../
+mv .git/objects/04/9404867a4a8a72b02d78a489c3393544388528 ../
+mv .git/objects/26/014d0ed14a0b414efcdd295f0bbafd66e87fd2 ../
+mv .git/objects/e7/3e9409692bacc4fd4701a834e5c107cbd4727a ../
+
+$ git fsck --full
+Checking object directories: 100% (256/256), done.
+error: HEAD: invalid sha1 pointer a0ec52912d8b4d5b643eaa8ee790f49bc4e12e20
+error: refs/heads/master does not point to a valid object!
+notice: No default references
+dangling blob 51f0e0869579d32ac80f372141184326fbc24b0a
+
+administrator@TMPHIST:temp$ grep -r a0ec52912d8b4d5b643eaa8ee790f49bc4e12e20 .git
+.git/refs/heads/master:a0ec52912d8b4d5b643eaa8ee790f49bc4e12e20
+
+nano .git/refs/heads/master
+# instead of a0ec52912d8b4d5b643eaa8ee790f49bc4e12e20, made it latest in .git/logs/refs/heads/master: 8110acbcbe8cf71049f3b1e96c93f60f133015ce
+
+$ git fsck --full
+Checking object directories: 100% (256/256), done.
+dangling blob 51f0e0869579d32ac80f372141184326fbc24b0a
+
+that is however, not the latest commit, but .git/logs/refs/heads/master and .git/logs/HEAD (they seem to be copies of each other?) .git/refs/heads/master has only one commit...
+Try to recover via .git/refs/heads/master - only one commit will be lost...
+
+That is not enough, though:
+$ git fsck --full
+Checking object directories: 100% (256/256), done.
+error: object file .git/objects/04/9404867a4a8a72b02d78a489c3393544388528 is empty
+error: object file .git/objects/04/9404867a4a8a72b02d78a489c3393544388528 is empty
+fatal: loose object 049404867a4a8a72b02d78a489c3393544388528 (stored in .git/objects/04/9404867a4a8a72b02d78a489c3393544388528) is corrupt
+
+... have to also remove empty objects...
+
+$ git gc
+Counting objects: 359, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (357/357), done.
+Writing objects: 100% (359/359), done.
+Total 359 (delta 182), reused 0 (delta 0)
+
+so, git gc does not remove empty objects:
+
+$ git fsck --full
+Checking object directories: 100% (256/256), done.
+error: object file .git/objects/04/9404867a4a8a72b02d78a489c3393544388528 is empty
+error: object file .git/objects/04/9404867a4a8a72b02d78a489c3393544388528 is empty
+fatal: loose object 049404867a4a8a72b02d78a489c3393544388528 (stored in .git/objects/04/9404867a4a8a72b02d78a489c3393544388528) is corrupt
+
+so did:
+
+rm .git/objects/04/9404867a4a8a72b02d78a489c3393544388528
+rm .git/objects/26/014d0ed14a0b414efcdd295f0bbafd66e87fd2
+rm .git/objects/a0/ec52912d8b4d5b643eaa8ee790f49bc4e12e20
+rm .git/objects/e7/3e9409692bacc4fd4701a834e5c107cbd4727a
+
+$ git fsck --full
+Checking object directories: 100% (256/256), done.
+Checking objects: 100% (359/359), done.
+dangling blob 51f0e0869579d32ac80f372141184326fbc24b0a
+
+$ git gc
+Counting objects: 359, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (175/175), done.
+Writing objects: 100% (359/359), done.
+Total 359 (delta 182), reused 359 (delta 182)
+
+Nice thing is, since it is only one commit:
+
+$ git status -uno
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   _DATA_/03_SMC Conference 2014 (Joint with ICMC)/03_SMC Conference 2014 (Joint with ICMC).bib
+	modified:   notes.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   _DATA_/03_SMC Conference 2014 (Joint with ICMC)/03_SMC Conference 2014 (Joint with ICMC).bib
+	modified:   notes.txt
+
+Untracked files not listed (use -u option to show untracked files)
+
+... the previous commit looks like it is in cache!; also the previous message:
+
+$ cat .git/COMMIT_EDITMSG
+: done manual revision of titles+authors in 03_SMC Conference 2014 up to and incl. entry 50 (there were wrong pdf links here)
+
+
+so can just do git commit for the cached ones, and basically recover that commit! Did that, then:
+
+$ git fsck --full
+Checking object directories: 100% (256/256), done.
+Checking objects: 100% (365/365), done.
+dangling blob 51f0e0869579d32ac80f372141184326fbc24b0a
+
+$ git gc --prune=all
+Counting objects: 365, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (177/177), done.
+Writing objects: 100% (365/365), done.
+Total 365 (delta 186), reused 365 (delta 186)
+
+$ git fsck --full
+Checking object directories: 100% (256/256), done.
+Checking objects: 100% (365/365), done.
